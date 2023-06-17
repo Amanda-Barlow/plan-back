@@ -40,7 +40,7 @@ const updatePlan = (req, res) => {
     })
 }
 
-// PEOPLE DESTROY ROUTE
+// DESTROY ROUTE
 const deletePlan = (req, res) => {
     Plan.findByIdAndDelete(req.params.id)
     .then((deletedPlan) => {
