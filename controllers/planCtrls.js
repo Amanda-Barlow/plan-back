@@ -30,7 +30,7 @@ const createPlan = async (req, res) => {
 
 // UPDATE ROUTE
 const updatePlan = (req, res) => {
-    db.Plan.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    Plan.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then((updatedPlan) => {
         if(!updatedPlan){
             res.status(400).json({Message: 'Could not update plan'})
@@ -42,7 +42,7 @@ const updatePlan = (req, res) => {
 
 // PEOPLE DESTROY ROUTE
 const deletePlan = (req, res) => {
-    db.Plan.findByIdAndDelete(req.params.id)
+    Plan.findByIdAndDelete(req.params.id)
     .then((deletedPlan) => {
         if(!deletedPlan){
             res.status(400).json({Message: 'Could not delete plan'})
